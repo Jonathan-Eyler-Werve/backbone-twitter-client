@@ -1,12 +1,12 @@
 'use strict';
 var app = app || {};
 
-(function () {
+(function (name) {
 
   var Name = Backbone.Model.extend({
 
     defaults: {
-      text: '',
+      text: name,
       suggestions: []
     },
 

@@ -39,9 +39,20 @@ $(function () {
   $("#input--main").keyup(function (event) {
     app.tweet.set("text", event.currentTarget.value);
 
-    // check for names in tweet
+    // if we find an @user in string typed by user...
+    if ( app.Tweet.checkForNames(app.tweet.attributes.text) ) {
 
+      var name = app.Tweet.checkForNames(app.tweet.attributes.text);
 
+      // cringing a bit at this data structure; refactor into a Backbone collection of names
+      if (!app.name) {
+        app.name = new app.Name(name);
+      } else {
+        app.name.set("text", name);
+      }
+
+    console.log(app.name.attributes.text);
+    }
   });
 
   app.initialize();
