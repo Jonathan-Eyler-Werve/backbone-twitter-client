@@ -6,15 +6,7 @@ var app = app || {};
   var Tweet = Backbone.Model.extend({
 
     defaults: {
-      text: '',
-      sent: false,
-      suggestions: []
-    },
-
-    send: function () {
-      this.save({
-        sent: true
-      });
+      text: ''
     }
 
   },

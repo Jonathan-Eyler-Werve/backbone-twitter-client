@@ -42,16 +42,21 @@ $(function () {
     // if we find an @user in string typed by user...
     if ( app.Tweet.checkForNames(app.tweet.attributes.text) ) {
 
-      var name = app.Tweet.checkForNames(app.tweet.attributes.text);
+      var nameText = app.Tweet.checkForNames(app.tweet.attributes.text);
 
-      // cringing a bit at this data structure; refactor into a Backbone collection of names
-      if (!app.name) {
-        app.name = new app.Name(name);
+      if (app.names.length === 0 || !app.names) {
+        var nameObject = new app.Name(nameText);
+        app.names.add(nameObject);
+
       } else {
-        app.name.set("text", name);
+        // using 'collection' in a not very collectiony way, but have collection in place to extend to multiple usernames
+        app.names.models[0].set("text", name);
       }
 
-    console.log(app.name.attributes.text);
+      console.log("attempting to sync");
+      app.names.sync();
+
+    // console.log(app.name.attributes.text);
     }
   });
 

@@ -18,17 +18,11 @@ app.runTests = function () {
   testTweet.set("text", "no at sign in here");
   console.log( app.Tweet.checkForNames(testTweet.attributes.text) === false );
 
-  testTweet = new app.Tweet();
-  testTweet.set("text", "at sign @ followed by space");
-  console.log( app.Tweet.checkForNames(testTweet.attributes.text) === false );
+  console.log( app.Tweet.checkForNames("at sign @ followed by space") === false );
 
-  testTweet = new app.Tweet();
-  testTweet.set("text", "at sign not @followed by space");
-  console.log( app.Tweet.checkForNames(testTweet.attributes.text)[0] === "@followed" );
+  console.log( app.Tweet.checkForNames("at sign not @followed by space")[0] === "@followed" );
 
-  testTweet = new app.Tweet();
-  testTweet.set("text", "at sign @one @two @three");
-  console.log( app.Tweet.checkForNames(testTweet.attributes.text)[0] === "@one" );
+  console.log( app.Tweet.checkForNames("at sign @one @two @three")[0] === "@one" );
 
   console.log( "=== Tests complete ===" );
 };
