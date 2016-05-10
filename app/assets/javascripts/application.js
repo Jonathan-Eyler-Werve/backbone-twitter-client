@@ -22,21 +22,29 @@
 //= require_tree ./routers
 //= require_tree .
 
+'use strict';
 var app = app || {};
 
 $(function () {
-  'use strict';
 
-  app = {
-  Models: {},
-  Collections: {},
-  Views: {},
-  Routers: {},
-  initialize: function() {
-    alert('Hello world!');
-  }
-};
+  app.Models = {};
+  app.Collections = {};
+  app.Views = {};
+  app.Routers = {};
+  app.initialize = function() {
+    app.tweet = new app.Tweet();
+  };
+
+  // update app.tweet as user types
+  $("#input--main").keyup(function (event) {
+    app.tweet.set("text", event.currentTarget.value);
+
+    // check for names in tweet
+
+
+  });
 
   app.initialize();
+  app.runTests();
 
 });

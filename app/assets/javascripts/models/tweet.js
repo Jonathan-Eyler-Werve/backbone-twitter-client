@@ -1,9 +1,10 @@
+'use strict';
 var app = app || {};
 
 (function () {
-  'use strict';
 
-  app.Tweet = Backbone.Model.extend({
+  var Tweet = Backbone.Model.extend({
+
     defaults: {
       text: '',
       sent: false,
@@ -16,9 +17,12 @@ var app = app || {};
       });
     }
 
-    // fetch suggestions
+    // fetch suggestions?
 
-    // display suggestions
+    // display suggestions?
 
   });
+
+  app.Tweet = Tweet;
+
 })();
