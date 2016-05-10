@@ -38,6 +38,11 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (6.0.3)
+    backbone-on-rails (1.2.0.0)
+      eco
+      ejs
+      jquery-rails
+      railties
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     buftok (0.2.0)
@@ -54,6 +59,12 @@ GEM
     debug_inspector (0.0.2)
     domain_name (0.5.20160310)
       unf (>= 0.0.5, < 1.0.0)
+    eco (1.0.0)
+      coffee-script
+      eco-source
+      execjs
+    eco-source (1.1.0.rc.1)
+    ejs (1.1.1)
     equalizer (0.0.10)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -180,6 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  backbone-on-rails
   byebug
   coffee-rails (~> 4.1.0)
   figaro
