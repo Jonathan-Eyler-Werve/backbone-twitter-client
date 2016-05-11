@@ -1,9 +1,10 @@
 'use strict';
 var app = app || {};
 
-(function () { // instance methods
+(function () {
 
   var Tweet = Backbone.Model.extend({
+    // "instance" methods
 
     defaults: {
       text: ''
@@ -11,7 +12,8 @@ var app = app || {};
 
   },
 
-  { // "class" methods
+  {
+    // "class" methods
 
     // checkForNames takes a string; returns false or array of strings.
     checkForNames: function (text) {

@@ -7,8 +7,8 @@ var app = app || {};
 
     defaults: {
       text: name,
-      suggestions: [] // this should be a collection
-    },
+      suggestions: [] // this should be a collection?
+    }
 
   });
 

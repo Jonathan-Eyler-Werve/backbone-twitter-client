@@ -27,12 +27,9 @@ var app = app || {};
 
 $(function () {
 
-  app.Models = {};
-  app.Collections = {};
-  app.Views = {};
-  app.Routers = {};
   app.initialize = function() {
     app.tweet = new app.Tweet();
+    app.names = new app.Names();
   };
 
   // update app.tweet as user types
@@ -47,14 +44,13 @@ $(function () {
       if (app.names.length === 0 || !app.names) {
         var nameObject = new app.Name(nameText);
         app.names.add(nameObject);
-
       } else {
         // using 'collection' in a not very collectiony way, but have collection in place to extend to multiple usernames
         app.names.models[0].set("text", name);
       }
 
       console.log("attempting to sync");
-      app.names.sync();
+      app.names.sync("POST", undefined, {url: "/data/namecheck"});
 
     // console.log(app.name.attributes.text);
     }

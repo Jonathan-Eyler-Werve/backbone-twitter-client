@@ -4,11 +4,11 @@ var app = app || {};
 (function () {
 
   var Names = Backbone.Collection.extend({
-      // Reference to this collection's model.
-      model: app.Name,
-      url: "/namecheck"
+    // Reference to this collection's model.
+    model: app.Name
+
   });
 
-  app.names = new Names();
+  app.Names = Names;
 
 })();
